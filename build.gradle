@@ -30,6 +30,14 @@ dependencies {
 	}
 	testImplementation 'org.springframework.security:spring-security-test'
 
+//	testImplementation('org.springframework.restdocs:spring-restdocs-mockmvc')
+	compile('org.apache.commons:commons-lang3:3.9')
+	compile('org.springframework.restdocs:spring-restdocs-mockmvc:2.0.2.RELEASE')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	testCompile("org.junit.platform:junit-platform-launcher:1.1.1")
+	testCompile("org.junit.platform:junit-platform-suite-api:1.1.1")
+	testCompile("org.junit.jupiter:junit-jupiter-engine:5.1.1")
+	testCompile("org.junit.vintage:junit-vintage-engine:5.1.1")
 	compile('com.h2database:h2')
 //	implementation 'junit:c:4.12'//
 }
