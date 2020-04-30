@@ -1,7 +1,12 @@
 package com.ohap.monitor.web;
 
+import com.ohap.monitor.domain.sample.Sample;
+import com.ohap.monitor.service.SampleService;
+import com.ohap.monitor.web.dto.SampleSaveRequestDto;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * 어노테이션의 특성을 사용하면 @Autowired나 @Resource @Inject 어노테이션 없이 DI 주입이 가능합니다.
@@ -12,10 +17,25 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SampleApiController {
 
+    SampleService sampleService;
 
+    @PostMapping("/ApiSave")
+    public void save(@RequestBody SampleSaveRequestDto sampleSaveRequestDto) {
+        sampleService.save(sampleSaveRequestDto);
+    }
+    @PutMapping("/ApiUpdate")
+    public void update(@RequestBody SampleSaveRequestDto sampleSaveRequestDto) {
+        sampleService.update(sampleSaveRequestDto);
+    }
 
+    @PostMapping("/ApiDeleteById")
+    public void deleteById(Long id){
+        sampleService.deleteById(id);
+    }
 
-
-
+    @GetMapping("/ApiSelectByIds")
+    public void selectById(List<Long> ids){
+        List<Sample> list = sampleService.selectByIds(ids);
+    }
 }
 
