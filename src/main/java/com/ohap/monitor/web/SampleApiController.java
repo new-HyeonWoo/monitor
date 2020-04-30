@@ -15,25 +15,26 @@ import java.util.List;
  */
 @RequiredArgsConstructor
 @RestController
+@RequestMapping("/api")
 public class SampleApiController {
 
     SampleService sampleService;
 
-    @PostMapping("/ApiSave")
+    @PostMapping("/Save")
     public void save(@RequestBody SampleSaveRequestDto sampleSaveRequestDto) {
         sampleService.save(sampleSaveRequestDto);
     }
-    @PutMapping("/ApiUpdate")
+    @PutMapping("/Update")
     public void update(@RequestBody SampleSaveRequestDto sampleSaveRequestDto) {
         sampleService.update(sampleSaveRequestDto);
     }
 
-    @PostMapping("/ApiDeleteById")
+    @PostMapping("/DeleteById")
     public void deleteById(Long id){
         sampleService.deleteById(id);
     }
 
-    @GetMapping("/ApiSelectByIds")
+    @GetMapping("/SelectByIds")
     public void selectById(List<Long> ids){
         List<Sample> list = sampleService.selectByIds(ids);
     }
