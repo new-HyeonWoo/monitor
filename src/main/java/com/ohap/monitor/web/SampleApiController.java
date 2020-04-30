@@ -1,7 +1,16 @@
 package com.ohap.monitor.web;
 
+import com.ohap.monitor.domain.sample.Sample;
+import com.ohap.monitor.domain.sample.SampleRepository;
+import com.ohap.monitor.service.SampleService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * 어노테이션의 특성을 사용하면 @Autowired나 @Resource @Inject 어노테이션 없이 DI 주입이 가능합니다.
@@ -12,6 +21,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SampleApiController {
 
+   // SampleRepository sampleRepository;
+
+    SampleService service;
+
+    @PutMapping("/hello/{title}")
+    public List<Sample> returnName(@PathVariable String title){
+        List<Sample> data = service.returnName(title);
+        return data;
+    }
 
 
 
