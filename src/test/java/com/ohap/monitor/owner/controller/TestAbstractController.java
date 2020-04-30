@@ -126,10 +126,4 @@ public abstract class TestAbstractController {
 	protected String getAuthorizationToken() {
 		return "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJvd25lcl9hcGlfdG9rZW4iLCJpc3MiOiJvd25lciIsImlhdCI6MzEzMzYzMjA5NTQwLCJpZHgiOjExNTA5NCwibmFtZSI6Iuq5gOuzke2biCIsInR5cGUiOjEsImF1ZCI6ImJoa2ltMkBzdGF0aW9uMy5jby5rciIsImV4cCI6MzEzMzYzMjA5NTQwfQ.4Xy2Q_8CQ57PqHvSj8D-qXNv5Qt6avggUqGkP3t3zMc";
 	}
-
-	protected String getSafeAuthConfirm() {
-		return "JFWUb88AVi96KOUifjqxabI//eF19iyXRKL0tbMt8tASKI2v1wY6quH8BYWRB33fEpezgpgthXF/b44v3m6Ss0gVubWOpX" +
-				"ZrR8C/W/A89deahs3Bd/Y7MvETPiGhrFFHfIV9pG3C2/zPsGNrsTMwFn+MRV9tSM9j/3/O5ZL/a8ernI2MVKyePxFt6uNmxq" +
-				"50nplnlvxfMyRxp/MD+YnSerYgLGABVVrqSvaeQQ3tUHhyJxje4cpnL1dP/nj4Izo6fQ5/3RryD+I=";
-	}
 }
