@@ -35,9 +35,10 @@ public class Sample {
     //해당 클래스의 빌더 패턴 클래스를 생성
     //생성자 상단에 선언 시 생성자에 포함된 필드만 빌더에 포함
     @Builder
-    public Sample(String title, String content) {
+    public Sample(String title, String content,Long id) {
         this.title = title;
         this.content = content;
+        this.id = id;
     }
 
 

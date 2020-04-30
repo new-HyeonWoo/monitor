@@ -1,14 +1,10 @@
 package com.ohap.monitor.web;
 
 import com.ohap.monitor.domain.sample.Sample;
-import com.ohap.monitor.domain.sample.SampleRepository;
 import com.ohap.monitor.service.SampleService;
+import com.ohap.monitor.web.dto.SampleSaveRequestDto;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,19 +17,25 @@ import java.util.List;
 @RestController
 public class SampleApiController {
 
-   // SampleRepository sampleRepository;
+    SampleService sampleService;
 
-    SampleService service;
-
-    @PutMapping("/hello/{title}")
-    public List<Sample> returnName(@PathVariable String title){
-        List<Sample> data = service.returnName(title);
-        return data;
+    @PostMapping("/ApiSave")
+    public void save(@RequestBody SampleSaveRequestDto sampleSaveRequestDto) {
+        sampleService.save(sampleSaveRequestDto);
+    }
+    @PutMapping("/ApiUpdate")
+    public void update(@RequestBody SampleSaveRequestDto sampleSaveRequestDto) {
+        sampleService.update(sampleSaveRequestDto);
     }
 
+    @PostMapping("/ApiDeleteById")
+    public void deleteById(Long id){
+        sampleService.deleteById(id);
+    }
 
-
-
-
+    @GetMapping("/ApiSelectByIds")
+    public void selectById(List<Long> ids){
+        List<Sample> list = sampleService.selectByIds(ids);
+    }
 }
 
