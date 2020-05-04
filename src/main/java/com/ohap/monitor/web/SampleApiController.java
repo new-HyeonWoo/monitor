@@ -18,7 +18,7 @@ import java.util.List;
 @RequestMapping("/api")
 public class SampleApiController {
 
-    SampleService sampleService;
+    private final SampleService sampleService;
 
     @PostMapping("/Save")
     public void save(@RequestBody SampleSaveRequestDto sampleSaveRequestDto) {
