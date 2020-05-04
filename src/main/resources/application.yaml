@@ -1,0 +1,17 @@
+server:
+  port: 8081
+activemq:
+  broker:
+    url: ssl://b-aaba59ff-0c40-443e-a1c9-c107389b3cbd-1.mq.us-east-2.amazonaws.com:61617
+    user: dlwjdtn535
+    password: 5624dlwjdtn!
+  queue:
+    name: monitor
+spring:
+  jpa:
+    show_sql: true
+  h2:
+    console:
+      enabled: true
+  activemq:
+    in-memory: false
