@@ -41,6 +41,10 @@ dependencies {
 	compile 'com.fasterxml.jackson.core:jackson-databind:2.9.7'
 	compile('com.h2database:h2')
 //	implementation 'junit:c:4.12'//
+
+	//stomp
+	implementation 'org.springframework.boot:spring-boot-starter-websocket'
+
 }
 
 test {
