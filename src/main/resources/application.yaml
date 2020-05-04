@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 8080
 activemq:
   broker:
     url: ssl://b-aaba59ff-0c40-443e-a1c9-c107389b3cbd-1.mq.us-east-2.amazonaws.com:61617
