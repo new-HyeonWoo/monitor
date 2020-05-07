@@ -20,5 +20,6 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     // 클라이언트가 메시지를 구독할 endpoint를 정의합니다.
     public void configureMessageBroker(MessageBrokerRegistry config) {
         config.enableSimpleBroker("/chart");
+//        config.enableStompBrokerRelay("/chart");
     }
 }
