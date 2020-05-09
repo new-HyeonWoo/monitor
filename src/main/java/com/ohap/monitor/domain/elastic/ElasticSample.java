@@ -16,6 +16,6 @@ public class ElasticSample {
     private String id;
     private String title;
     private String user;
-//    private long startAt;
-//    private long endAt;
+    private long startAt;
+    private long endAt;
 }
