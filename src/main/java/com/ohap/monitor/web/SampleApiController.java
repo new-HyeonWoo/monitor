@@ -1,5 +1,7 @@
 package com.ohap.monitor.web;
 
+import com.ohap.monitor.domain.elastic.ElasticSample;
+import com.ohap.monitor.domain.elastic.ElasticSampleRepository;
 import com.ohap.monitor.domain.sample.Sample;
 import com.ohap.monitor.service.SampleService;
 import com.ohap.monitor.web.dto.SampleSaveRequestDto;
@@ -20,6 +22,8 @@ public class SampleApiController {
 
     private final SampleService sampleService;
 
+    private final ElasticSampleRepository elasticSampleRepository;
+
     @PostMapping("/Save")
     public void save(@RequestBody SampleSaveRequestDto sampleSaveRequestDto) {
         sampleService.save(sampleSaveRequestDto);
@@ -38,5 +42,17 @@ public class SampleApiController {
     public void selectById(List<Long> ids){
         List<Sample> list = sampleService.selectByIds(ids);
     }
+
+    //엘라스틱 서치 테스트
+    @PostMapping("/elastics")
+    public void elasticSave(@RequestBody ElasticSample elasticSample) {
+        elasticSampleRepository.save(elasticSample);
+    }
+
+    @GetMapping("/elastics/{user}")
+    public ElasticSample findByUser(@PathVariable("user") String user){
+        return elasticSampleRepository.findByUser(user);
+    }
+
 }
 

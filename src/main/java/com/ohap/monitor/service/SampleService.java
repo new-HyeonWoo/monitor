@@ -5,6 +5,7 @@ import com.ohap.monitor.domain.sample.SampleRepository;
 import com.ohap.monitor.web.dto.SampleSaveRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -12,8 +13,9 @@ import java.util.List;
 @Service
 public class SampleService {
 
-    SampleRepository sampleRepository;
+    private final SampleRepository sampleRepository;
 
+    @Transactional
     public void save(SampleSaveRequestDto sampleSaveRequestDto){
         sampleRepository.save(sampleSaveRequestDto.toEntity());
     }
