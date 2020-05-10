@@ -1,5 +1,5 @@
-package com.ohap.monitor.web.dto;
-
+//package com.ohap.monitor.web.dto;
+//
 //@Getter //@Setter
 //// 기본 생성자 자동추가
 //@NoArgsConstructor
